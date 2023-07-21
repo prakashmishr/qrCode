@@ -4,12 +4,14 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const qrCodeApi = createApi({
   reducerPath: "qr_code",
   baseQuery: fetchBaseQuery({ baseUrl: "https://data.phoneo.in/public/api/" }),
+  tagTypes:['updateQR'],
   endpoints: (builder) => ({
         GetQRBulk: builder.query({
             query:()=>({
                 url:'QRBulk',
                 method:'GET'
-            })
+            }),
+            providesTags:["updateQR"]
         }),
         GetQRById: builder.query({
             query:(id)=>({
@@ -23,12 +25,20 @@ export const qrCodeApi = createApi({
                 method:'GET'
             })
         }),
+
+        GetShopList: builder.query({
+            query:()=>({
+                url:`QRLinkList`,
+                method:'GET'
+            })
+        }),
         UpdateQRById: builder.mutation({
-            query: (body,id) => ({ 
-                url:`QR/${id}`,
+            query: (body) => ({ 
+                url:`QR/${body.id}`,
               method: "PUT",
-              body
+              body:body
             }),
+            invalidatesTags:["updateQR"]
           }),
 
   }),
@@ -39,5 +49,6 @@ export const {
     useGetQRBulkQuery,
     useGetQRByIdQuery,
     useGetScanLinkQuery,
-    useUpdateQRByIdMutation
+    useUpdateQRByIdMutation,
+    useGetShopListQuery
 } = qrCodeApi;

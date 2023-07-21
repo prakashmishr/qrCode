@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Style from "./style.module.css";
 import {
   AiOutlineQuestionCircle,
@@ -13,12 +13,55 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { TbActivityHeartbeat } from "react-icons/tb";
 import { VscSettings } from "react-icons/vsc";
 import QrCodeCard from "../cardQr/QRCode";
-import { useGetQRBulkQuery } from "../../service";
+import { useGetQRBulkQuery, useUpdateQRByIdMutation, useGetShopListQuery } from "../../service";
+import {Autocomplete, TextField} from '@mui/material'
 
 // VscSettings
 export default function Index() {
   const { data, isLoading, isSuccess } = useGetQRBulkQuery();
-  console.log(data);
+  const [setWebLink] = useUpdateQRByIdMutation();
+  const {data:shopList} = useGetShopListQuery();
+  // console.log(shopList);
+  const [main, setMain] = useState([])
+  const  [len, setLen] = useState(0)
+  const [search, setSearch] = React.useState();
+
+
+ const handleSearch = (e)=>{
+  // console.log(e.target.value)
+
+  var searched = data?.filter((element)=>{
+    // console.log(element.QrIdName)
+    return ( element.QrIdName.toLowerCase().includes(e.target.value.toLowerCase()) || 
+        element.Link?.toLowerCase().includes(e.target.value.toLowerCase())
+    
+    )
+  })
+
+  // console.log(searched)
+  setMain(searched)
+  setLen(searched.length)
+ }
+
+ 
+ React.useEffect(()=>{
+    if(data){
+      setMain(data)
+      setLen(data.length)
+    }
+ },[data])
+
+ async function getWebUrl(e, iD){
+    // console.log(e, iD)
+    var body = {
+      id: iD,
+      Link:e
+    }
+   var res = await setWebLink(body)
+  //  console.log(res)
+ }
+
+
 
   return (
     <>
@@ -53,14 +96,23 @@ export default function Index() {
             {/* seacrch */}
 
             <div className={Style.searchbarBox}>
-              <p></p>
+              <p>
               <input
                 type="text"
                 className={Style.searchBar}
                 name="searchbar"
                 id="mySearchbar"
                 placeholder="Search QR Codes..."
+                value={search}
+                onChange={handleSearch}
               />
+              
+
+   
+              
+              
+              
+              </p>
               {/* <button >
 		<span >
 			<AiOutlineSearch />
@@ -109,7 +161,7 @@ export default function Index() {
               {" "}
               <GiHamburgerMenu />
             </span>
-            <span className={Style.rightHeadingTitle}>All QR Codes </span>
+            <span className={Style.rightHeadingTitle}>All QR Codes ({len}) </span>
             <span className={Style.rightHeadingIcon}>
               <VscSettings />
             </span>
@@ -125,10 +177,10 @@ export default function Index() {
             </span>
           </div>        
 
-          {data?.map((item) => {
+          {main?.map((item) => {
             return <>
           <div className={Style.QrCodeCards}>
-            <QrCodeCard item={item}/>
+            <QrCodeCard item={item} getWebUrl={getWebUrl}/>
           </div>
             </>
           })}
