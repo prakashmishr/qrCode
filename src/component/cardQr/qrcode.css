@@ -1,0 +1,134 @@
+
+
+.qr_box{
+    background-color: var(--white);
+    display: flex;
+    /* justify-content: space-around; */
+    align-items:center;
+}
+.qr_left{
+    width: 50%;
+}
+.qr_website_link{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.weblink{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+.weblink_icon{
+    font-size: 40px;
+    color: var(--grey);
+}
+.weblink_box{
+    width: 80%;
+    border-radius: 10px;
+    /* background-color: var(--moon); */
+    padding: 10px;
+    font-size: 25px;
+    margin-left: -20px;
+    color: var(--grey);
+}
+.weblink_input{
+    width: 100%;
+    background-color: transparent;
+    padding: 10px 20px;
+    font: 600 16px var(--regular-font);
+    color: var(--grey);
+    border: none;
+    outline: none;
+}
+.qr_activity{
+    display: flex;
+    margin-top: 3%;
+    /* justify-content: space-around; */
+    margin-left: 35px;
+    align-items: center;
+}
+.activity_box{
+    margin: 5px;
+    padding:0 10px ;
+    border-left:0.1px solid var(--moon) ;
+    height: 100%;
+}
+.activity_box_manual{
+    display: flex;
+    margin: 10px 0;
+    align-items: center;
+    font:400 13px var(--regular-font);
+    color: var(--lightgrey);
+}
+.activity_icon{
+    margin: 0 10px;
+    font-size: 18px;
+}
+.activity_download{
+    text-align: center;
+    margin-left: 15px;
+}
+.download_btn{
+    cursor: pointer;
+    border: none;
+    display: flex;
+    border-radius: 5px;
+    box-shadow: 0 0 5px var(--grey);
+    font: 600 20px var(--regular-font);
+    text-transform: uppercase;
+    padding: 10px 20px;
+    align-items: center;
+    justify-content: space-around;
+    color: var(--white);
+    background-color: var(--OG_blue);
+    opacity: 0.7;
+    transition: all 0.5s;
+}
+.download_icon{
+    font-size: 25px;
+    margin:0 10px;
+}
+.download_btn:hover{
+    opacity: 1;
+}
+
+.qr_right{
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+}
+.qrcode{
+    width: 160px;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--moon);
+    border-radius: 10px;
+    margin: 5px;
+    margin-left: 20px;
+}
+
+.scanBox{
+    width: 50%;
+}
+
+.noOfScan{
+    font-size: 30px;
+
+}
+
+.details{
+    margin-top: 20px;
+    color:var(--OG_blue);
+}
+
+
+.activity_box_download{
+    margin: 5px;
+    padding:0 10px ;
+    /* border-left:0.1px solid var(--moon) ; */
+    height: 100%;
+}

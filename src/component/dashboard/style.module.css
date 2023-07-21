@@ -1,0 +1,204 @@
+.box{
+    display: flex;
+    padding: 20px;
+    padding-bottom: 0px;
+   
+
+}
+
+.last{
+    margin-left:auto;
+    display: flex;
+    color:#88e1ff;
+    margin-right: 30px;
+}
+
+.logo{
+    width: 50px;
+}
+
+.questionMark{
+    padding: 2px;
+    margin-right: 15px;
+    font-size: 30px;
+}
+
+.userIcon{
+    padding: 2px;
+    font-size: 30px;
+    border-left:0.1px solid gray
+    
+}
+
+.Account{
+    font-size: 15px;
+    color: #1974d2;
+    font-weight: bold;
+}
+
+.user{
+    display: flex;
+   align-items: center;
+   
+}
+
+.mainBody{
+    display: flex;
+
+}
+
+.offCanvas{
+    width: 350px;
+    padding-right: 2px;
+    margin-right: 5px;
+    background: #616568;
+    height: 90.2vh;
+    margin-top: 0px;
+    padding-top: 0px;
+    
+
+}
+
+.menu{
+    margin-left: 130px;
+    font-size: 30px;
+    color:#88e1ff;
+}
+
+.search{
+    
+}
+
+.rightComponent{
+    width: 100%;
+    padding: 40px;
+    background:#f7f7f7;
+   
+    
+}
+
+.hr{
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+.item{
+    margin: 15px;
+    color: white;
+    margin-top: 40px;
+}
+
+.All{
+    padding: 5px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    
+}
+
+.topHeading{
+    font-size: 13px;
+    opacity: 0.5;
+    font-weight: bold;
+}
+
+.offMenuIcon{
+    margin-top: 5px;
+    padding-right: 20px;
+    opacity: 0.5;
+}
+
+.bottomHeading{
+    font-size: 13px;
+    opacity: 0.5;
+    margin-top: 50px;
+    font-weight: bold;
+}
+
+.rightHeading{
+    display: flex;
+    margin-left: 15px;
+    gap: 15px;
+}
+
+.rightHeadingIcon{
+    font-size: 25px;
+    opacity: 0.3;
+}
+
+.rightHeadingTitle{
+    margin-top: 3px;
+    font-weight: bold;
+    opacity: 0.6;
+}
+
+.rightHeadingCreate{
+    margin-left: auto;
+    border:1px solid 90c52d;
+    padding: 2px;
+    display: flex;
+    align-items: center;
+   background:#90c52d;
+   color:white;
+   border-radius: 5px;
+   
+}  
+
+.rightHeadingCreateIcon{
+    font-size: 18px;
+    color:white;
+    margin-top: 5px;
+    font-weight: bold; 
+    margin-right: 5px;   
+}
+
+.rightHeadingCreateText{
+    font-weight: bold;
+}
+
+
+.searchbarBox{
+  display: flex;
+  margin-top: 25px;
+  padding: 10px;
+  justify-content: center;
+}
+
+.searchBar{
+    border-radius: 50px;
+    height: 40px;
+    background-color: #616568;
+    color: white;
+    width: 230px;
+    text-align: center;
+}
+
+.searchBar::placeholder {
+    color:white;
+    opacity: 0.3; /* Firefox */
+    font-size: 15px;
+    text-align: center;
+   
+}
+
+.QrCodeCards{
+    padding: 20px;
+}
+
+.navbar{
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    /* border-bottom: 1px solid black; */
+    background: #eaeaea;
+
+}
+
+
+.offCanvas{
+    position: sticky;
+    top: 73px;
+    z-index: 0;
+    /* border-bottom: 1px solid black; */
+    
+}

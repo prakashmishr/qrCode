@@ -36,3 +36,25 @@
     transform: rotate(360deg);
   }
 }
+
+
+@font-face{
+  font-family: regular;
+  src: url('./component//fonts/Roboto-Regular.ttf');
+}
+body{
+  background-color: rgb(234, 234, 234);
+}
+:root{
+  --white:white;
+  --moon:rgb(234, 234, 234);
+  --grey:grey;
+  --lightgrey:rgb(194, 194, 194);
+  --OG_green:rgb(25, 186, 25);
+  --OG_blue:rgb(31, 126, 226);
+
+
+  --regular-font:regular;
+
+
+}
